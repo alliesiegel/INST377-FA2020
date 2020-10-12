@@ -3,12 +3,11 @@
 html, body {
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 html {
   font-size: 10px;
-  background-color: #00539F;
+
 }
 
 body {
@@ -17,45 +16,34 @@ body {
   margin: 0 auto;
   background-color: #6091C3;
 }
-img {
-  display: block;
 
-}
 /* || typography */
 
 h1, h2, h3 {
-
-  font-family: 'Lemonada', cursive;
-  color: #3a215c;
-  text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+  color: #2a2a2a;
 }
 
 p, input, li {
   font-family: 'Lemonada', cursive;
-  color: #771972;
+  color: #2a2a2a;
 }
 
 h1 {
-
-  margin: 0;
-  font-size: 5rem;
-  font-weight: 800;
-  padding: 20px 0;    
-  color:  #3a215c;
+  font-size: 4rem;
   text-align: center;
+  text-shadow: 2px 2px 10px black;
+  font-weight: 100;
 }
 
 h2 {
   font-size: 5rem;
   text-align: center;
-  font-weight: 600;
-  
+  font-weight: 800;
 }
 
 h3 {
   font-size: 2.2rem;
-  text-align: center;
-  font-weight: 500;
 }
 
 p, li {
@@ -65,22 +53,19 @@ p, li {
 
 /* || header layout */
 
-div.header {
+.header {
   margin-bottom: 10px;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 body > * {
-  width: 600px;
-  margin: 0 auto;
-  background-color: #3FBFBF;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
+  background-color: rgb(88, 37, 206);
+  padding: 1%;
 }
 
-.main, .header, nav, div.article, .aside, footer, section {
-  background-color: rgba(42, 107, 230, 0.5);
+.main, .header, nav, .article, .aside, footer, section {
+  background-color: #3FBFBF;
   padding: 1%;
 }
 
@@ -90,11 +75,9 @@ h1 {
 }
 
 header img {
-  justify-content: flex-end;
-  height: 50px;
-  width:50px;
+  display: block;
+  height: 60px;
   padding-top: 20.15px;
-
 }
 
 nav {
@@ -113,7 +96,7 @@ nav ul {
 nav li {
   display: inline;
   text-align: center;
-  flex: 5;
+  flex: 1;
 }
 
 nav a, nav span {
@@ -137,43 +120,29 @@ nav a, nav span {
   flex: 4;
 }
 
-aside {
+.aside {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   flex: 4;
-  width: 40%;
-  padding-left: .5rem;
-  margin-left: .5rem;
-  float: right;
 }
 
-aside > a {
+.aside a {
   display: flex;
-  flex-flow: row wrap;
   flex-basis: 50%;
 }
 
-aside > img {
+.aside img {
   width: 100%;
   height: auto;
 }
 
-
 .footer {
   margin-top: 10px;
 }
-
 .something {
-  margin: 30px;
-  width: 100px;
-  height: 100px;
-  background-color: rgb(217, 196, 238);
-
+  align-self: center;
 }
 .something p {
+  font-family: 'Lemonada', cursive;
   text-align: center;
-}
-
-.container {
-  display: flex; /* or inline-flex */
 }

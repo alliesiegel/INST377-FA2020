@@ -1,4 +1,4 @@
-// You may wish to find an effective randomizer function on MDN.
+// You may wish to find an effective randomizer function on MDN
 
 function range(int) {
     const arr = [];
@@ -29,6 +29,10 @@ function range(int) {
     })
       .then((fromServer) => fromServer.json())
       .then((fromServer) => {
+        var countries = require('./countries.js');
+        print(countries[1])
+
+
         // You're going to do your lab work in here. Replace this comment.
         console.log('fromServer', fromServer);
       })

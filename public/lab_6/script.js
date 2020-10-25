@@ -1,4 +1,9 @@
 // You may wish to find an effective randomizer function on MDN
+function getRandomIntInclusive(mn, mx) {
+  const min = Math.ceil(mn);
+  const max = Math.floor(mx);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function range(int) {
     const arr = [];
@@ -8,7 +13,7 @@ function range(int) {
     return arr;
   }
   
-  function sortFunction(a, b, key) {
+  function sortByKey(a, b, key) {
     if (a[key] < b[key]) {
       return -1;
     } if (a[key] > b[key]) {
@@ -28,13 +33,30 @@ function range(int) {
       body: JSON.stringify(form)
     })
       .then((fromServer) => fromServer.json())
-      .then((fromServer) => {
-        var countries = require('./countries.js');
-        print(countries[1])
+      .then((jsonFromServer) => {
 
+        const newArr = range(10);
+        const newArr2 = newArr.map(() => {
+          const number = getRandomIntInclusive (0, 243);
+          return jsonFromServer[number];
+        });
+      
+        const reverseList = newArr2.sort((a,b) => sortByKey(b, a, 'name'));
+        if (document.querySelector(".flex-inner")) {
+          document.querySelector(".flex-inner").remove()
+        };
+        const ul = document.createElement('ul');
+      
+        ul.className = 'flex-inner';
+        $('form').prepend(ul);
 
-        // You're going to do your lab work in here. Replace this comment.
-        console.log('fromServer', fromServer);
+        reverseList.forEach((el, i) => {
+          const li = document.createElement ('li');
+          $(li).append(`<input type ="checkbox" value=${el.code} id=${el.code} />`);
+          $(li).append(`<label for=${el.code}> ${el.name} <label/>`);
+          $(ul).append(li);
+        });
+         // return reverseList;
       })
       .catch((err) => console.log(err));
-  });
+});

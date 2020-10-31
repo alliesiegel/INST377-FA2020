@@ -1,6 +1,16 @@
 function convertRestaurantsToCategories(restaurantList) {
-  // process your restaurants here!
-  return list;
+  const categ = restaurantList.find((findItem) => findItem.label === item.category);
+
+    if (!categ) {
+      restaurantList.push({
+        y: 1,
+        label: item.category
+      });
+    } else {
+      categ.y += 1;
+    }
+    return restaurantList;
+  return restaurantList;
 }
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
